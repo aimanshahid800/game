@@ -11,7 +11,7 @@ type SquareProps = {
 const Square: React.FC<SquareProps> = ({ value, onClick }) => {
   return (
     <button
-      className="w-[10vh] h-[10vh] text-2xl font-bold border-2 rounded-md shadow-lg shadow-white border-black bg-transparent flex items-center justify-center"
+      className="w-[10vh] h-[10vh] text-2xl font-bold border-2 rounded-md shadow-lg shadow-white border-black bg-transparent flex items-center justify-center hover:-translate-y-2 transform transition-transform duration-300"
       onClick={onClick}
     >
       {value}
@@ -64,7 +64,7 @@ const Board: React.FC = () => {
       <div className="text-xl text-white font-bold mb-5">{gameStatus}</div>
       <div className="flex gap-4 mb-4">
       </div>
-      <div className={`grid gap-1 grid-cols-${gridSize}`}
+      <div className={`grid gap-3 grid-cols-${gridSize}`}
         style={{ gridTemplateColumns: `repeat(${gridSize}, 1fr)` }}
       >
         {squares.map((_, i) => renderSquare(i))}
